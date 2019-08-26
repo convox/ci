@@ -6,6 +6,8 @@ RUN curl -s https://download.docker.com/linux/static/stable/x86_64/docker-18.03.
 RUN curl -Ls https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux/amd64/kubectl -o /usr/bin/kubectl && \
   chmod +x /usr/bin/kubectl
 
+WORKDIR /
+
 COPY . .
 
 CMD ["bash", "-c"]
