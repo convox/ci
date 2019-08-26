@@ -1,7 +1,0 @@
-#!/bin/bash
-
-name=$(echo ${GITHUB_REF} | awk -F/ '{print $3}')
-
-set -ex
-
-docker build -t ${1}:${name} .
