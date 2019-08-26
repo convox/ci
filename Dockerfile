@@ -7,3 +7,5 @@ RUN curl -Ls https://storage.googleapis.com/kubernetes-release/release/v1.13.0/b
   chmod +x /usr/bin/kubectl
 
 COPY . .
+
+CMD ["bash", "-c"]
