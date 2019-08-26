@@ -1,0 +1,11 @@
+#!/bin/bash
+
+tag=$(echo ${GITHUB_REF} | awk -F/ '{print $3}')
+
+case ${INPUT_ACTION} in
+create-image)
+  docker login -u ${INPUT_USERNAME} -p ${INPUT_PASSWORD}
+  docker build -t ${INPUT_IMAGE}:${tag} .
+  docker push ${INPUT_IMAGE}:${tag}
+  ;;
+esac
